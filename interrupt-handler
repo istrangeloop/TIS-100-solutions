@@ -1,0 +1,16 @@
+MOV ACC, DOWN   | MOV ACC, DOWN   | MOV ACC, DOWN   | MOV ACC, DOWN   |
+MOV UP, ACC     | MOV UP, ACC     | MOV UP, ACC     | MOV UP, ACC     |
+MOV ACC, DOWN   | MOV ACC, DOWN   | MOV ACC, DOWN   | MOV ACC, DOWN   |
+________________|_________________|_________________|_________________|
+MOV UP, ACC     | MOV UP, ACC     | MOV UP, ACC     | MOV UP, ACC     |
+SUB UP          | SUB UP          | SUB UP          | SUB UP          |
+JLZ Y           | JLZ Y           | JLZ Y           | JLZ Y           |
+MOV 0, RIGHT    | MOV LEFT, RIGHT | MOV LEFT, RIGHT | MOV LEFT, RIGHT |
+JMP END         | JMP END         | JMP END         | JMP END         |
+Y: MOV 1, RIGHT | Y: MOV 2, RIGHT | Y: MOV 3, RIGHT | Y: MOV 4, RIGHT |
+END: MOV 0, ACC | MOV LEFT, NIL   | MOV LEFT, NIL   | MOV LEFT, NIL   |
+                | END:MOV 0, ACC  | END:MOV 0, ACC  | END:MOV 0, ACC  |
+_______________ |_________________|_________________|_________________|
+COMMUNICATION   |                 | MOV RIGHT, DOWN | MOV UP, LEFT    |
+FAILURE         |                 |                 |                 |
+________________|_________________|_________________|_________________|

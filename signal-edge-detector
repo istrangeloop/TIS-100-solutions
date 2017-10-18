@@ -1,0 +1,19 @@
+              | MOV ACC, RIGHT  | MOV LEFT, DOWN |
+              | MOV UP, ACC     |                |
+              | MOV ACC, DOWN   |                |
+______________|_________________|________________|__________
+              | MOV UP, RIGHT   | MOV UP, ACC    |
+              |                 | SUB LEFT       |
+              |                 | JLZ P          |
+              |                 | JMP D          |
+              |                 | P: NEG         |
+              |                 | D: SUB 10      |
+              |                 | JLZ W          |
+              |                 | MOV 1, DOWN    |
+              |                 | JMP END        |
+              |                 | W: MOV 0, DOWN |
+              |                 | END: NOP       |
+______________|_________________|________________|__________
+COMMUNICATION |                 |                |
+FAILURE       |                 |                |
+______________|_________________|________________|__________

@@ -1,0 +1,9 @@
+MOV RIGHT, ACC | MOV UP, LEFT  | MOV LEFT, ACC | COMMUNICATION
+ADD ACC        | MOV UP, RIGHT | ADD ACC       | FAILURE
+MOV ACC, DOWN  |               | MOV ACC, DOWN |
+_______________|_______________|_______________|_______________
+MOV UP, RIGHT  | MOV ANY, DOWN | MOV UP, DOWN  | 
+               | NOP           |               |
+_______________|_______________|_______________|_______________
+COMMUNICATION  | MOV UP, RIGHT | MOV ANY, DOWN |
+FAILURE        |               |               |

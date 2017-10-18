@@ -1,0 +1,38 @@
+                    |MOV UP, DOWN   | S: MOV DOWN, ACC  | MOV LEFT, ACC 
+                    |               | SAV               | NEG           
+                    |               | SUB DOWN          | ADD LEFT      
+                    |               | JLZ L             | MOV ACC, LEFT 
+                    |               | SWP               |               
+                    |               | MOV ACC, DOWN     |               
+                    |               | JMP S             |               
+                    |               | L: MOV ACC, RIGHT |               
+                    |               | SWP               |               
+                    |               | MOV ACC, RIGHT    |               
+                    |               | SWP               |               
+                    |               | MOV ACC, RIGHT    |               
+                    |               | MOV RIGHT, DOWN   |               
+____________________|_______________|___________________|_______________
+MOV DOWN, ACC       | MOV UP, ACC   | S: MOV LEFT, ACC  | COMMUNICATION 
+SUB DOWN            | MOV ACC, DOWN | JEZ E             | FAILURE       
+NEG                 | MOV ACC, RIGHT| MOV ACC, UP       |               
+MOV ACC, DOWN       |               | SWP               |               
+                    |               | MOV ACC, UP       |
+                    |               | MOV UP, ACC       |
+                    |               | SAV               |
+                    |               | JMP S             |               
+                    |               | E: SWP            |               
+                    |               | MOV ACC, DOWN     |               
+____________________|_______________|___________________|_______________
+S: MOV RIGHT, ACC   | MOV 256, ACC  | MOV UP, DOWN      |
+SAV                 | SWP           |                   |
+SUB RIGHT           | S: MOV UP, ACC|                   |
+JGZ G               | JEZ E         |                   |
+SWP                 | MOV ACC, LEFT |                   |
+MOV ACC, RIGHT      | SWP           |                   |
+JMP S               | MOV ACC, LEFT |                   |
+G: MOV ACC, UP      | MOV LEFT, ACC |                   |
+SWP                 | SAV           |                   |
+MOV ACC, UP         | JMP S         |                   |
+MOV UP, RIGHT       | E: SWP        |                   |
+                    | MOV ACC, DOWN |                   |
+

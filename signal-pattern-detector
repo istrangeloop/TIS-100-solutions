@@ -1,0 +1,17 @@
+SET:MOV -3, ACC | S: MOV UP, ACC    |               | COMMUNICATION |
+ADD RIGHT       | JNZ EXIT          |               | FAILURE       |
+JGZ SET         | MOV 1, LEFT       |               |               |
+MOV 0, DOWN     | JMP S             |               |               |
+ADD RIGHT       | EXIT:             |               |               |
+JGZ SET         | MOV 10, LEFT      |               |               |
+MOV 0, DOWN     | MOV 0, DOWN       |               |               |
+LOOP:ADD RIGHT  |                   |               |               |
+JGZ SET         |                   |               |               |
+MOV 1, DOWN     |                   |               |               |
+SUB 1           |                   |               |               |
+JMP LOOP        |                   |               |               |
+________________|___________________|_______________|_______________|
+MOV UP, RIGHT   | MOV ANY, DOWN     |               |               |
+________________|___________________|_______________|_______________|
+                | MOV UP, RIGHT     | MOV LEFT, DOWN|
+

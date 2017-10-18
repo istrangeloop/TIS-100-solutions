@@ -1,0 +1,19 @@
+                |               |                   |
+________________|_______________|___________________|_______
+COMMUNICATION   |               |                   |
+FAILURE         |               |                   |
+________________|_______________|___________________|_______
+                | MOV 2, RIGHT  | S: ADD 31         |
+                |               | SWP               |
+                |               | MOV 0, DOWN       |
+                |               | MOV ACC, DOWN     |
+                |               | SWP               |
+                |               | LOOP: SUB 1       |
+                |               | JEZ CAR           |
+                |               | MOV 3, DOWN       |
+                |               | JMP LOOP          |
+                |               | CAR: MOV -1, DOWN |
+                |               | SWP               |
+                |               | ADD 1             |
+                |               | SWP               |
+                |               | JMP S             |

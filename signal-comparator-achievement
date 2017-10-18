@@ -1,0 +1,18 @@
+MOV UP, DOWN  |                |                |               |
+______________|________________|________________|_______________|
+MOV UP, DOWN  | COMMUNICATION  | COMMUNICATION  | COMMUNICATION |
+              | FAILURE        | FAILURE        | FAILURE       |
+______________|________________|________________|_______________|
+MOV UP, RIGHT | MOV LEFT, ACC  | JRO 2          | JRO 2         |
+              | MOV ACC, RIGHT | MOV 1, DOWN    | MOV 0, DOWN   |
+              | ADD 6          | MOV LEFT, ACC  | MOV LEFT, ACC |
+              | JRO ACC        | MOV ACC, RIGHT | ADD 6         |
+              | MOV 0, DOWN    | ADD 6          | JRO ACC       |
+              | JRO -5         | JRO ACC        | MOV 1, DOWN   |
+              | NOP            | MOV 0, DOWN    | JRO -4        |
+              | NOP            | JRO -5         | NOP           |
+              | NOP            | NOP            | NOP           |
+              | JRO -5         | NOP            | JRO -4        |
+              | MOV 1, DOWN    | JRO -4         | JRO -9        |
+              |                | JRO -10        |               |
+              |                | JRO -6         |               |

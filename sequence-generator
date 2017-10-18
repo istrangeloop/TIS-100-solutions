@@ -1,0 +1,23 @@
+    | MOV UP, ACC       | S: MOV UP, ACC    |
+    | MOV ACC, RIGHT    | SAV               |
+    | MOV ACC, DOWN     | SUB LEFT          |
+    |                   | JLZ L             |
+    |                   | MOV 0, DOWN       |
+    |                   | F: SWP            |
+    |                   | MOV ACC, DOWN     |
+    |                   | JMP S             |
+    |                   | L: MOV 1, DOWN    |
+    |                   | JMP F             |
+____|___________________|___________________|_______
+    | MOV UP, RIGHT     | S: MOV UP, ACC    |
+    |                   | JGZ G             |
+    |                   | MOV LEFT, DOWN    |
+    |                   | MOV UP, DOWN      |
+    |                   | JMP S             |
+    |                   | G: MOV UP, DOWN   |
+    |                   | MOV LEFT, DOWN    |
+____|___________________|___________________|_______
+    | COMMUNICATION     | MOV UP, DOWN      |
+    | FAILURE           | MOV UP, DOWN      |
+    |                   | MOV 0, DOWN       |
+    |                   |                   |

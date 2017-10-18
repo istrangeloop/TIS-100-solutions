@@ -1,0 +1,10 @@
+      | MOV UP, ACC   | MOV UP, LEFT  |
+      | SUB RIGHT     |               |
+      | MOV ACC, DOWN |               |
+______|_______________|_______________|______________
+      | MOV UP, ACC   | MOV LEFT, ACC | COMMUNICATION
+      | MOV ACC, RIGHT| NEG           | FAILURE
+      | MOV ACC, DOWN | MOV ACC, DOWN |
+______|_______________|_______________|______________
+      | MOV UP, DOWN  | MOV UP, DOWN  |
+      |               |               |

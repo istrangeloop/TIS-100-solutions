@@ -1,0 +1,13 @@
+MOV RIGHT, ACC      | JMP C             | S: JMP L          | COMMUNICATION
+SUB RIGHT           | MOV ACC, DOWN     | Z: ADD 1          | FAILURE      
+JEZ L               | MOV -4, RIGHT     | JMP P             |              
+MOV -10, RIGHT      | MOV 0, ACC        | SUB 1             |              
+JRO -4              | C: MOV ACC, LEFT  | JLZ Z             |              
+L: MOV -7, RIGHT    | ADD UP            | P: MOV ACC, DOWN  |              
+                    | MOV ACC, LEFT     | MOV 0, ACC        |              
+                    | MOV ACC, RIGHT    | L: JRO LEFT       |              
+                    | JRO LEFT          | ADD 1             |              
+____________________|___________________|___________________|________________
+                    | MOV UP, DOWN      | MOV UP, DOWN      |               
+____________________|___________________|___________________|________________
+                    | MOV UP, DOWN      | MOV UP, DOWN      |

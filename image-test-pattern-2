@@ -1,0 +1,16 @@
+COMMUNICATION   |               |                   |
+FAILURE         |               |                   |
+________________|_______________|___________________|_______
+                |               |                   |
+________________|_______________|___________________|_______
+                | ADD 3         | MOV 0, DOWN       |
+                | MOV ACC, RIGHT| MOV ACC, DOWN     |
+                | SUB 3         | SWP               |
+                | MOV ACC, RIGHT| ADD 32            |
+                |               | L: SUB 1          |
+                |               | JEZ C             |
+                |               | MOV LEFT, DOWN    |
+                |               | JMP L             |
+                |               | C: MOV -1, DOWN   |
+                |               | SWP               |
+                |               | ADD 1             |
