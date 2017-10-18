@@ -3,10 +3,10 @@ My solutions to the assembly game no one asked for. Achievements included.
 
 Statistics:
 
-##SELF TEST DISGNOSTIC (achievement):
+#SELF TEST DIAGNOSTIC (achievement):
 * 154004 cycles / 8 nodes / 14 instr
 
-##SIGNAL AMPLIFIER (achievement):
+#SIGNAL AMPLIFIER (achievement):
 * 86 cycles / 8 nodes / 14 instr
 
 ##DIFFERENTIAL CONVERTER:
