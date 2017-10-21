@@ -5,7 +5,7 @@ MOV UP, DOWN | COMMUNICATION         | SUB 1000         | MOV UP, LEFT
              |                       | SUB 1000         |
              |                       | S: ADD 1         |
              |                       | JLZ S            |
-             |                       | MOV DOWN, DOWN   |
+             |                       |                  |
 _____________|_______________________|__________________|_________________
 MOV UP, DOWN | COMMUNICATION         |                  | COMMUNICATION
              | FAILURE               | MOV UP, DOWN     | FAILURE
