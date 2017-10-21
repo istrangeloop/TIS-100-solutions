@@ -5,9 +5,9 @@ ________________|_________________|_________________|_________________|
 MOV UP, ACC     | MOV UP, ACC     | MOV UP, ACC     | MOV UP, ACC     |
 SUB UP          | SUB UP          | SUB UP          | SUB UP          |
 JLZ Y           | JLZ Y           | JLZ Y           | JLZ Y           |
-MOV 0, RIGHT    | MOV LEFT, RIGHT | MOV LEFT, RIGHT | MOV LEFT, RIGHT |
+MOV 0, RIGHT    | MOV LEFT, RIGHT | MOV LEFT, RIGHT | MOV LEFT, DOWN  |
 JMP END         | JMP END         | JMP END         | JMP END         |
-Y: MOV 1, RIGHT | Y: MOV 2, RIGHT | Y: MOV 3, RIGHT | Y: MOV 4, RIGHT |
+Y: MOV 1, RIGHT | Y: MOV 2, RIGHT | Y: MOV 3, RIGHT | Y: MOV 4, DOWN  |
 END: MOV 0, ACC | MOV LEFT, NIL   | MOV LEFT, NIL   | MOV LEFT, NIL   |
                 | END:MOV 0, ACC  | END:MOV 0, ACC  | END:MOV 0, ACC  |
 _______________ |_________________|_________________|_________________|
