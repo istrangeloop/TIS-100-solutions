@@ -1,0 +1,37 @@
+MOV RIGHT,ACC    | MOV UP,ACC        |                   |
+JEZ B            | JEZ B             |                   |
+SAV              | SAV               |                   |
+A: MOV RIGHT,ACC | A: MOV UP,ACC     |                   |
+JEZ B            | JEZ B             |                   |
+MOV ACC,DOWN     | MOV ACC,LEFT      |                   |
+JMP A            | JMP A             | ================= |
+B: MOV 0,DOWN    | B: MOV 0,LEFT     | STACK MEMORY NODE |
+SWP              | SWP               | ================= |
+JEZ E            | JEZ C             |                   |
+F: MOV ACC,DOWN  | MOV ACC,LEFT      |                   |
+E: MOV RIGHT,ACC | C: MOV 0,LEFT     |                   |
+JEZ C            |                   |                   |
+JMP F            |                   |                   |
+C: MOV 0,DOWN    |                   |                   |
+_________________|___________________|___________________|_______
+MOV UP,ACC       | MOV LEFT,ACC      | MOV LEFT,ACC      |
+JEZ B            | JEZ B             | JEZ F             |
+SAV              | SAV               | SAV               |
+A: MOV UP,ACC    | A: MOV LEFT,ACC   | A: MOV LEFT,ACC   |
+JEZ B            | JEZ B             | JEZ B             |
+MOV ACC,RIGHT    | MOV ACC,RIGHT     | MOV ACC,DOWN      |
+JMP A            | JMP A             | JMP A             |
+B: MOV 0,RIGHT   | B: MOV 0,RIGHT    | B: SWP            |
+SWP              | SWP               | JEZ C             |
+JEZ E            | JEZ E             | MOV ACC,DOWN      |
+F: MOV ACC,RIGHT | F: MOV ACC,RIGHT  | F: MOV LEFT,ACC   |
+E: MOV UP,ACC    | E: MOV LEFT,ACC   | JEZ C             |
+JEZ C            | JEZ C             | MOV ACC,DOWN      |
+JMP F            | JMP F             | JMP F             |
+C: MOV 0,RIGHT   | C: MOV 0,RIGHT    | C: MOV 0,DOWN     |
+_________________|___________________|___________________|_______
+COMMUNICATION    |                   | MOV UP, DOWN      |
+FAILURE          | ================= |                   |
+                 | STACK MEMORY NODE |                   |
+                 | ================= |                   |
+                 |                   |                   |
