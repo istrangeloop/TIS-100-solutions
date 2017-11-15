@@ -18,6 +18,9 @@ Statistics:
 ##SIGNAL MULTIPLEXER:
 * 359 cycles / 7 nodes / 28 instr
 
+##SIGNAL MULTIPLIER
+* 1541 cycles / 4 nodes / 21 instr
+
 ##SEQUENCE GENERATOR:
 * 149 cycles / 5 nodes / 24 instr
 
