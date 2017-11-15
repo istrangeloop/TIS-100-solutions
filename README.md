@@ -39,6 +39,9 @@ Statistics:
 ##SEQUENCE PEAK DETECTOR:
 * 565 cycles / 9 nodes / 57 instr
 
+##SEQUENCE REVERSER:
+* 364 cycles / 6 nodes / 73 instr
+
 ##IMAGE TEST PATTERN 1:
 * 2961 cyles / 2 nodes / 15 instr
 
