@@ -1,0 +1,26 @@
+COMMUNICATION | MOV UP,ACC    | MOV 0,RIGHT      |
+FAILURE       | MOV ACC,DOWN  | MOV 0,RIGHT      |
+              | MOV ACC,RIGHT | S: MOV ACC,RIGHT |
+              |               | SWP              |
+              |               | MOV ACC,RIGHT    |
+              |               | SWP              | =================
+              |               | MOV DOWN,ACC     | STACK MEMORY NODE
+              |               | SWP              | =================
+              |               | MOV DOWN,ACC     |
+              |               | SWP              |
+              |               | MOV LEFT,DOWN    |
+              |               | JMP S            |
+______________|_______________|__________________|___________________
+              | MOV ACC,DOWN  | MOV ACC,UP       | MOV UP,DOWN
+              | SWP           | SWP              |
+              | MOV ACC,DOWN  | MOV ACC,UP       |
+              | MOV UP,ACC    | SWP              |
+              | MOV ACC,DOWN  | MOV UP,ACC       |
+              |               | SWP              |
+______________|_______________|__________________|___________________
+              | MOV UP,ACC    | MOV RIGHT,ACC    |
+              | ADD UP        | ADD RIGHT        | =================
+              | ADD UP        | ADD LEFT         | STACK MEMORY NODE
+              | MOV ACC,DOWN  | MOV ACC,DOWN     | =================
+              | MOV ACC,RIGHT |                  |
+
