@@ -24,6 +24,9 @@ Statistics:
 ##SEQUENCE COUNTER (achievement):
 * 401 cycles / 7 nodes / 28 instr
 
+##SEQUENCE INDEXER
+* 3267 cycles / 6 nodes / 38 instr
+
 ##SIGNAL EDGE DETECTOR:
 * 365 cycles / 5 nodes / 17 instr
 
