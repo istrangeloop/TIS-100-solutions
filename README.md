@@ -44,3 +44,6 @@ Statistics:
 
 ##IMAGE TEST PATTERN 2:
 * 2994 cycles / 2 nodes / 15 instr
+
+##SIGNAL DIVIDER
+* 10074 cycles / 5 nodes / 29 instr

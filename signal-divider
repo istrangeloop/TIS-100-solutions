@@ -1,0 +1,23 @@
+                  | MOV UP,ACC     | R: MOV UP,ACC |
+                  | SWP            | P: SWP        |
+                  | MOV -1,ACC     | MOV LEFT,ACC  |
+                  | S: ADD 1       | JLZ E         |
+                  | SWP            | SWP           |
+                  | MOV -1,RIGHT   | MOV ACC,LEFT  |
+                  | SUB RIGHT      | JMP R         |
+                  | JLZ E          | E: SWP        |
+                  | SWP            | MOV ACC,LEFT  |
+                  | JMP S          | JMP P         |
+                  | E: MOV 0,RIGHT |               |
+                  | ADD RIGHT      |               |
+                  | MOV ACC,DOWN   |               |
+                  | SWP            |               |
+                  | MOV ACC,DOWN   |               |
+__________________|________________|_______________|___________________
+                  | MOV UP,DOWN    |               |
+================= |                |               | =================
+STACK MEMORY NODE |                |               | STACK MEMORY NODE
+================= |                |               | =================
+__________________|________________|_______________|___________________
+                  | MOV UP,RIGHT   | MOV LEFT,DOWN |
+                  | MOV UP,DOWN    |               |
