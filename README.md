@@ -44,3 +44,6 @@ Statistics:
 
 ##IMAGE TEST PATTERN 2:
 * 2994 cycles / 2 nodes / 15 instr
+
+## HISTOGRAM VIEWER
+* 4181 cycles / 4 nodes / 24 instr
