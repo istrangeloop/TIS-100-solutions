@@ -1,0 +1,26 @@
+                 | MOV UP,DOWN    |                 | COMMUNICATION
+                 |                |                 | FAILURE
+_________________|________________|_________________|_______________
+S: MOV RIGHT,ACC | S: MOV UP,LEFT | S: MOV LEFT,ACC |
+SAV              | MOV UP,RIGHT   | SAV             |
+MOV RIGHT,ACC    | MOV UP,ACC     | MOV LEFT,ACC    |
+L: JEZ S         | SWP            | L: JEZ S        |
+SWP              | MOV UP,ACC     | SWP             |
+MOV ACC,RIGHT    | MOV ACC,LEFT   | MOV ACC,LEFT    |
+SWP              | MOV ACC,RIGHT  | ADD 1           |
+SUB 1            | L: JEZ S       | SWP             |
+JMP L            | SWP            | SUB 1           |
+                 | MOV LEFT,DOWN  | JMP L           |
+                 | MOV RIGHT,DOWN |                 |
+                 | MOV ACC,DOWN   |                 |
+                 | SWP            |                 |
+                 | SUB 1          |                 |
+                 | JMP L          |                 |
+_________________|________________|_________________|_______________
+                 | MOV UP,RIGHT   | MOV LEFT,DOWN   |
+                 |                | MOV LEFT, DOWN  |
+                 |                | D: JEZ E        |
+                 |                | MOV 3,DOWN      |
+                 |                | SUB 1           |
+                 |                | JMP D           |
+                 |                | E: MOV -1,DOWN  |
