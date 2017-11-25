@@ -47,3 +47,6 @@ Statistics:
 
 ##IMAGE TEST PATTERN 2:
 * 2994 cycles / 2 nodes / 15 instr
+
+##EXPOSURE MASK VIEWER
+* 1019 cycles / 6 nodes / 44 instr
