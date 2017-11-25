@@ -1,0 +1,16 @@
+              | MOV UP,DOWN   |                 |
+______________|_______________|_________________|_______
+              | MOV UP,DOWN   |                 |
+______________|_______________|_________________|_______
+COMMUNICATION | MOV 17,ACC    | S: MOV LEFT,ACC |
+FAILURE       | SAV           | JLZ E           |
+              | MOV UP,ACC    | SWP             |
+              | L: SWP        | MOV ACC,DOWN    |
+              | MOV ACC,RIGHT | SWP             |
+              | SUB 1         | MOV ACC,DOWN    |
+              | SWP           | MOV 3,DOWN      |
+              | SUB 1         | MOV -1,DOWN     |
+              | JGZ L         | JMP S           |
+              | MOV -1,RIGHT  | E: SWP          |
+              |               | ADD 1           |
+              |               | SWP             |
