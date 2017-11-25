@@ -1,0 +1,28 @@
+MOV -1,RIGHT  |                   | MOV 9,ACC          | COMMUNICATION
+L: MOV UP,ACC |                   | SUB UP             | FAILURE
+JEZ E         |                   | MOV ACC,DOWN       |
+MOV ACC,RIGHT | ================= | MOV UP,DOWN        |
+JMP L         | STACK MEMORY NODE |                    |
+E: MOV 0,DOWN | ================= |                    |
+JRO 0         |                   |                    |
+              |                   |                    |
+______________|___________________|____________________|_______________
+MOV UP,RIGHT  | MOV LEFT,NIL      | MOV UP,ACC         |
+              | D: MOV -1,DOWN    | SAV                |
+              | DL: MOV UP,ACC    | MOV 10,ACC         |
+              | JLZ U             | L: SWP             |
+              | MOV ACC,RIGHT     | JEZ OUT            |
+              | MOV ACC,DOWN      | MOV LEFT,NIL       |
+              | JMP DL            | JMP N              |
+              | U: MOV -1,UP      | OUT: MOV LEFT,DOWN |
+              | UL: MOV DOWN,ACC  | N: SUB 1           |
+              | JLZ D             | SWP                |
+              | MOV ACC,RIGHT     | SUB 1              |
+              | MOV ACC,UP        | JGZ L              |
+              | JMP UL            |                    |
+______________|___________________|____________________|_______________
+              |                   | MOV UP, DOWN       |
+              | ================= |                    |
+              | STACK MEMORY NODE |                    |
+              | ================= |                    |
+              |                   |                    |
