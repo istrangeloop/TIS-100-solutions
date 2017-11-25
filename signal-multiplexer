@@ -1,0 +1,17 @@
+              | JMP MAIN        | JMP MAIN          | JMP MAIN
+              | SEND:           | L: MOV 1, DOWN    | SEND:
+              | MOV UP, NIL     | MAIN:             | MOV UP, NIL
+              | MAIN:           | MOV UP, ACC       | MAIN:
+              | MOV RIGHT, ACC  | MOV ACC, LEFT     | MOV LEFT, ACC
+              | JGZ SEND        | MOV ACC, RIGHT    | JLZ SEND
+              | MOV UP, DOWN    | JEZ L             | MOV UP, DOWN
+              |                 | MOV 0, DOWN       |
+______________|_________________|___________________|_______________
+              | MOV UP, RIGHT   | JMP MAIN          | MOV UP, LEFT
+              |                 | L:                |
+              |                 | MOV NIL, ACC      |
+              |                 | ADD ANY           |
+              |                 | MOV ACC, DOWN     |
+______________|_________________|___________________|_______________
+COMMUNICATION |                 | MOV UP, DOWN      |
+FAILURE       |                 |                   |

@@ -1,17 +1,22 @@
-              | JMP MAIN        | JMP MAIN          | JMP MAIN
-              | SEND:           | L: MOV 1, DOWN    | SEND:
-              | MOV UP, NIL     | MAIN:             | MOV UP, NIL
-              | MAIN:           | MOV UP, ACC       | MAIN:
-              | MOV RIGHT, ACC  | MOV ACC, LEFT     | MOV LEFT, ACC
-              | JGZ SEND        | MOV ACC, RIGHT    | JLZ SEND
-              | MOV UP, DOWN    | JEZ L             | MOV UP, DOWN
-              |                 | MOV 0, DOWN       |
-______________|_________________|___________________|_______________
-              | MOV UP, RIGHT   | JMP MAIN          | MOV UP, LEFT
-              |                 | L:                |
-              |                 | MOV NIL, ACC      |
-              |                 | ADD ANY           |
-              |                 | MOV ACC, DOWN     |
-______________|_________________|___________________|_______________
-COMMUNICATION |                 | MOV UP, DOWN      |
-FAILURE       |                 |                   |
+                  | MOV UP,RIGHT | S: MOV UP,ACC |
+                  |              | SWP           |
+                  |              | MOV LEFT,ACC  |
+                  |              | MOV ACC,DOWN  |
+                  |              | L: JEZ S      |
+                  |              | SWP           |
+                  |              | SUB 1         |
+                  |              | JMP L         |
+__________________|______________|_______________|__________________
+                  |              | MOV UP,ACC    |
+                  |              | L: JEZ E      |
+                  |              | SWP           |
+                  |              | ADD UP        |
+================= |              | SWP           | =================
+STACK MEMORY NODE |              | SUB 1         | STACK MEMORY NODE
+================= |              | JMP L         | =================
+                  |              | E: SWP        |
+                  |              | MOV ACC,DOWN  |
+                  |              |               |
+__________________|______________|_______________|__________________
+COMMUNICATION     |              | MOV UP, DOWN  |
+FAILURE           |              |               |
