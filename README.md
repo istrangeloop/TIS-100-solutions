@@ -51,9 +51,11 @@ Statistics:
 ##IMAGE TEST PATTERN 2:
 * 2994 cycles / 2 nodes / 15 instr
 
+##SIGNAL WINDOW FILTER
+* 545 cycles / 7 nodes / 36 instr
+
 ##SIGNAL DIVIDER
 * 10074 cycles / 5 nodes / 29 instr
 
 ##EXPOSURE MASK VIEWER
 * 1019 cycles / 6 nodes / 44 instr
-
